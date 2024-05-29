@@ -1,7 +1,11 @@
 package com.brunoedubems.dscatalog.entities;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
+import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,6 +30,9 @@ public class Category {
 
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant updatedAt;
+
+@ManyToAny()
+private Set<Product> Products = new HashSet<>();
 
 	public Category() {
 	}
@@ -69,6 +76,25 @@ public class Category {
 		updatedAt = Instant.now();
 	}
 
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public void setUpdatedAt(Instant updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public java.util.Set<Product> getProducts() {
+		return Products;
+	}
+
+	public void setProducts(java.util.Set<Product> products) {
+		Products = products;
+	}
+
+
+
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -85,4 +111,6 @@ public class Category {
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
 }
