@@ -1,5 +1,4 @@
-package com.devsuperior.dscatalog.services;
-
+package com.brunoedubems.dscatalog.services;
 import static org.mockito.Mockito.times;
 
 import java.util.List;
@@ -23,10 +22,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.brunoedubems.dscatalog.dto.ProductDTO;
 import com.brunoedubems.dscatalog.entities.Product;
 import com.brunoedubems.dscatalog.repositories.ProductRepository;
-import com.brunoedubems.dscatalog.services.ProductService;
 import com.brunoedubems.dscatalog.services.exceptions.DatabaseException;
 import com.brunoedubems.dscatalog.services.exceptions.ResourceNotFoundException;
-import com.devsuperior.dscatalog.tests.Factory;
+import com.brunoedubems.dscatalog.tests.Factory;
 
 @ExtendWith(SpringExtension.class)
 public class ProductServiceTests {
